@@ -10,10 +10,12 @@ type Event = {
 
 // use hardcoded events for use during development before database
 const events: Event[] = [
-    { id: 1, name: "Alice Cooper", date: "01/01/2016", venue: "Scheels Arena", location: "Fargo, ND"},
-    { id: 2, name: "Weird Al Yankovic", date: "01/01/2005", venue: "Chester Fritz", location: "Grand Forks, ND"},
-    { id: 3, name: "Gary Numan", date: "01/01/2023", venue: "First Avenue", location: "Minneapolis, MN"},
-    { id: 4, name: "The Cure", date: "01/02/2023", venue: "Xcel Energy Center", location: "St. Paul, MN"}
+    { id: 1, name: "Kenton Brown", date: "2025-08-18", venue: "Davis Inc Auditorium", location: "Antoinettestad, Louisiana"},
+    { id: 2, name: "Brionna O'Keefe PhD", date: "2026-02-11", venue: "Lemke Auditorium", location: "Bryanafort, New Hampshire"},
+    { id: 3, name: "Jamar Volkman", date: "2025-11-30", venue: "Botsford-Fay Auditorium", location: "East Cathrineshire, Alaska"},
+    { id: 4, name: "Tyrese Mraz", date: "2025-09-24", venue: "Cassin-Smith Auditorium", location: "Myrlton, Washington"},
+    { id: 5, name: "Korey Schneider V", date: "2026-03-28", venue: "Kilback-Jacobi Auditorium", location: "North Cheyanne, California"},
+    { id: 6, name: "Dr. Harold Nicolas", date: "2025-07-10", venue: "Metz Group Auditorium", location: "Florineberg, Connecticut"}
 ]
 
 export default function handler(
