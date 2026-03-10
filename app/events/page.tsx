@@ -1,6 +1,7 @@
 "use client"; 
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
+import EventsTable from "../../components/EventList";
 
 type Event = {
   id: string;
@@ -12,15 +13,14 @@ type Event = {
 };
 
 
-export default function EventsTable() {
-  const [events, setEvents] = useState<Event[]>([]);
+export default function EventsHome() {
+  // events are pulled from the EventsTable component, so they don't need to be defined here. 
   const [loading, setLoading] = useState(true);
 
 useEffect(() => {
     fetch("http://localhost:3000/api/events")
       .then((res) => res.json())
       .then((data) => {
-        setEvents(data);
         setLoading(false);
       });
   }, []);
@@ -28,28 +28,11 @@ useEffect(() => {
     if (loading) return <div>Loading...</div>;
 
 return (
-    <table>
-      <thead>
-        <tr>
-          <th>Image</th>
-          <th>Name</th>
-          <th>Date</th>
-          <th>Details</th>
-        </tr>
-      </thead>
-      <tbody>
-        {events.map((event) => (
-          <tr key={event.id}>
-            <td>{event.name}</td>
-            <td>{event.date}</td>
-            <td>{event.venue}</td>
-            <td>{event.city_state}</td>
-            <td>
-              <Link href={`/events/${event.id}`}>View</Link>
-            </td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+  <div>
+    <div>
+      <EventsTable />
+    </div>
+       <p>I need to add more content here. Demo of using a component as a direct resource.</p>
+    </div>
   );
 }
